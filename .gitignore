@@ -1,9 +1,0 @@
-# XAMPP
-/xampp/
-/xampp/*
-!/xampp/mysql/data/
-!/xampp/mysql/data/*
-!/xampp/mysql/data/**/
-!/xampp/mysql/data/**/*
-!/xampp/htdocs/
-!/xampp/htdocs/*
