@@ -1,0 +1,12 @@
+body {
+    height: 100vh;  /* Set the height to 100% of the viewport height */
+    overflow: hidden;  /* Hide both horizontal and vertical scrolling */
+    margin: 0;  /* Remove default margin */
+    padding: 0;  /* Remove default padding */
+}
+@media screen and (max-width: 768px) {
+    .sidebar {
+        display: none;  /* Hide the sidebar on mobile devices */
+        background-color: pink;
+    }
+}

@@ -1,18 +1,22 @@
-function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.classList.toggle('hidden');
-}
+document.addEventListener('DOMContentLoaded', function() {
+    var dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
-// Initially hide the sidebar on small screens
-if (window.innerWidth <= 768) {
-    document.querySelector('.sidebar').classList.add('hidden');
-}
+    dropdownToggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function() {
+            var dropdownMenu = this.nextElementSibling;
+            var isOpen = dropdownMenu.classList.contains('open');
 
-// Adjust sidebar visibility on window resize
-window.addEventListener('resize', function() {
-    if (window.innerWidth > 768) {
-        document.querySelector('.sidebar').classList.remove('hidden');
-    } else {
-        document.querySelector('.sidebar').classList.add('hidden');
-    }
+            // Close all open dropdowns
+            document.querySelectorAll('.dropdown-menu.open').forEach(function(menu) {
+                menu.classList.remove('open');
+            });
+
+            // Toggle current dropdown
+            if (!isOpen) {
+                dropdownMenu.classList.add('open');
+            } else {
+                dropdownMenu.classList.remove('open');
+            }
+        });
+    });
 });
